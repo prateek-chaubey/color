@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color-Picker Social Colors</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Audiowide|Faster+One|Libre+Barcode+128+Text|Orbitron|Press+Start+2P" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/sdcard/Download/w3color.js" type="text/javascript"></script>
+<link rel="stylesheet" href="Download/w3.css">
+</head>
+<body>
+<style type="text/css">
+
+.n{
+text-align:center;
+color:white;
+font-size:20px;
+line-height:55px;
+margin:auto;
+width:95%;
+border-radius:5px;
+height:55px;
+font-family: 'Audiowide', cursive;
+cursor: pointer;
+box-shadow: 6px 6px 25px 3px rgba(0, 0, 0, 0.1);
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+margin-top:4px;
+}
+.n:hover{
+opacity:0.9;
+}
+.ripple {
+	display: block;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	transform: scale(0);
+
+	animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+	to {
+		opacity: 0;
+		transform: scale(2.5);
+	}
+}
+
+#bar1 ,#bar2 , #bar3 {
+width: 50px;
+height: 5px;
+background-color: #ff7878;
+margin: 6px 0;
+transition: 0.6s;
+}
+#bar2{
+transition: .6s;
+width:40px;
+}
+#container{
+transition:0.6s;
+position:absolute;
+top:15px;
+}
+
+.bbs{
+margin-left:160px;
+margin-top:290px;
+width:100px;
+height:50px;
+}
+.close{
+position:absolute;
+bottom:5px;
+margin-left:160px;
+}
+
+
+.sidenav {
+height: 0%;
+width: 100%;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background:rgba(0,0,0,.9);
+overflow-x: hidden;
+transition: 0.6s;
+}
+.nav{
+height:380px;
+}
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #fff;
+display: block;
+transition: 0.3s;
+}
+.sidenav a:hover, a:focus{
+color: #f1f1f1;
+}     
+   .change #bar1 {
+   transform: rotate(-405deg)
+   translate(-9px, 6px) ;
+   background:#ff7878;
+   }
+   .change #bar2 {opacity: 0; background:#899;}
+   .change #bar3 {
+   transform: rotate(405deg)
+   translate(-8px, -8px) ;
+   background:#ff7878;
+   }
+   .foot{
+background:#333;
+color:white;
+height:340px;
+font-family: 'Audiowide', cursive;
+   }
+   a{
+   text-decoration:none;
+   }
+#navi{color:#fff;font-family: 'Audiowide', cursive;font-size:40px;line-height:70px;text-align:center;width:100%; height:70px;background:#6cb060;position:absolute;top:0;}
+</style>
+<script type="text/javascript">
+//////////M/A/D/E///B/Y/////P/R/A/T/E/E/K////C/H/A/U/B/E/Y////A/T///P/K/C/Inc./////////////////////////////////////////
+
+
+/////R/I/P/P/L/E////
+function myFunction(x) {
+document.getElementById("mySidenav").classList.toggle("nav");
+
+}
+function myfunction(x) {
+document.getElementById("mySidenav").classList.toggle("nav");
+
+}
+
+
+function myf(code) {
+document.getElementById("tyy").value=code;
+var copyText = document.getElementById("tyy");
+  copyText.select();
+  document.execCommand("copy");
+  document.getElementById("codes").textContent=document.getElementById("tyy").value;
+  document.getElementById("toast").style.display="block";
+      document.getElementById("toast").style.background=document.getElementById("tyy").value;
+  setInterval(function(){
+  document.getElementById("toast").style.display="none";
+  },5000);
+}
+
+</script>
+<div id="mySidenav" class="sidenav enable-ripple">
+
+<a href="socil.html" >Social Color</a><br><br>
+<a href="html.html" >HTML5 Color</a><br><br></a>
+<div style="text-align:center;color:white;" >Tap The  Code to Copy.</div>
+
+<div class="change close" onclick="myfunction(this)">
+<div id="bar1"></div>
+<div id="bar2"></div>
+<div id="bar3"></div>
+</div>
+</div>
+<div id="navi" style="position:fixed"  class="enable-ripple"  >
+<div id="container" onclick="myFunction(this)">
+<div id="bar1"></div>
+<div id="bar2"></div>
+<div id="bar3"></div>
+</div>
+&nbsp; Color Picker</div><br><br><br>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#3b5999')" >
+<div class="nam" style="background:#3B5999" ></div>
+<div class="code" >Facebook<br>#3B5999</div>
+</div>
+<div class="back " onclick="myf('#0084FF')" >
+<div class="nam" style="background:#0084FF" ></div>
+<div class="code" >Messenger<br>#0084FF</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#55ACEE')" >
+<div class="nam" style="background:#55ACEE" ></div>
+<div class="code" >Twitter<br>#55ACEE</div>
+</div>
+<div class="back " onclick="myf('#0077B5')" >
+<div class="nam" style="background:#0077B5" ></div>
+<div class="code" >LinkedIn<br>#0077B5</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#00AFF0')" >
+<div class="nam" style="background:#00AFF0" ></div>
+<div class="code" >Skype<br>#00AFF0</div>
+</div>
+<div class="back " onclick="myf('#007EE5')" >
+<div class="nam" style="background:#007EE5" ></div>
+<div class="code" >Dropbox<br>#007EE5</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#21759B')" >
+<div class="nam" style="background:#21759B" ></div>
+<div class="code" >WordPress<br>#21759B</div>
+</div>
+<div class="back " onclick="myf('#1AB7EA')" >
+<div class="nam" style="background:#1AB7EA" ></div>
+<div class="code" >Vimeo<br>#1AB7EA</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#34465D')" >
+<div class="nam" style="background:#34465D" ></div>
+<div class="code" >Tumblr<br>#34465D</div>
+</div>
+<div class="back " onclick="myf('#BD081C')" >
+<div class="nam" style="background:#BD081C" ></div>
+<div class="code" >Pinterest<br>#BD081C</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#410093')" >
+<div class="nam" style="background:#410093" ></div>
+<div class="code" >Yahoo<br>#410093</div>
+</div>
+<div class="back " onclick="myf('#DD4B39')" >
+<div class="nam" style="background:#DD4B39" ></div>
+<div class="code" >Google<br>#DD4B39</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#EB4924')" >
+<div class="nam" style="background:#EB4924" ></div>
+<div class="code" >YouTube<br>#EB4924</div>
+</div>
+<div class="back " onclick="myf('#FF5700')" >
+<div class="nam" style="background:#FF5700" ></div>
+<div class="code" >Reddit<br>#FF5700</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#B92B27')" >
+<div class="nam" style="background:#B92B27" ></div>
+<div class="code" >Quora<br>#B92B27</div>
+</div>
+<div class="back " onclick="myf('#DF2029')" >
+<div class="nam" style="background:#DF2029" ></div>
+<div class="code" >Weibo<br>#DF2029</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#AF0606')" >
+<div class="nam" style="background:#AF0606" ></div>
+<div class="code" >Yelp<br>#AF0606</div>
+</div>
+<div class="back " onclick="myf('#DA552F')" >
+<div class="nam" style="background:#DA552F" ></div>
+<div class="code" >Producthunt<br>#DA552F</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#FF6600')" >
+<div class="nam" style="background:#FF6600" ></div>
+<div class="code" >HackerNews<br>#FF6600</div>
+</div>
+<div class="back " onclick="myf('#FF3300')" >
+<div class="nam" style="background:#FF3300" ></div>
+<div class="code" >SoundCloud<br>#FF3300</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#F57D00')" >
+<div class="nam" style="background:#F57D00" ></div>
+<div class="code" >Blogger<br>#F57D00</div>
+</div>
+<div class="back " onclick="myf('#25D366')" >
+<div class="nam" style="background:#25D366" ></div>
+<div class="code" >WhatsApp<br>#25D366</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#09B83E')" >
+<div class="nam" style="background:#09B83E" ></div>
+<div class="code" >Wechat<br>#09B83E</div>
+</div>
+<div class="back " onclick="myf('#00C300')" >
+<div class="nam" style="background:#00C300" ></div>
+<div class="code" >Line<br>#00C300</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#02B875')" >
+<div class="nam" style="background:#02B875" ></div>
+<div class="code" >Medium<br>#02B875</div>
+</div>
+<div class="back " onclick="myf('#00B489')" >
+<div class="nam" style="background:#00B489" ></div>
+<div class="code" >Vine<br>#00B489</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#3AAF85')" >
+<div class="nam" style="background:#3AAF85" ></div>
+<div class="code" >Slack<br>#3AAF85</div>
+</div>
+<div class="back " onclick="myf('#E4405F')" >
+<div class="nam" style="background:#E4405F" ></div>
+<div class="code" >Instagram<br>#E4405F</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#EA4C89')" >
+<div class="nam" style="background:#EA4C89" ></div>
+<div class="code" >Dribbble<br>#EA4C89</div>
+</div>
+<div class="back " onclick="myf('#FF0084')" >
+<div class="nam" style="background:#FF0084" ></div>
+<div class="code" >Flicker<br>#FF0084</div>
+</div>
+</div>
+<div style="display:flex"  >
+<div class="back " onclick="myf('#F94877')" >
+<div class="nam" style="background:#F94877" ></div>
+<div class="code" >FourSquare<br>#F94877</div>
+</div>
+<div class="back " onclick="myf('#131418')" >
+<div class="nam" style="background:#131418" ></div>
+<div class="code" >Beehance<br>#131418</div>
+</div>
+</div>
+
+
+<!--
+<div style="display:flex"  >
+<div class="back " onclick="myf('')" >
+<div class="nam" style="background:" ></div>
+<div class="code" ><br></div>
+</div>
+<div class="back " onclick="myf('')" >
+<div class="nam" style="background:" ></div>
+<div class="code" ><br></div>
+</div>
+</div>
+--><br><br>
+<div class="foot" ><br>
+<a href="gradient.html" >Gradient Genrator &nbsp;<sup class="pro" >pro</sup></a><br><br>
+<a href="extract.html" >Extract Color &nbsp;<sup class="pro" >pro</sup></a><br><br>
+<a href="material.html" >Material UI Color</a><br><br>
+<a href="color-pick.html" >Color Pick</a><br><br>
+<a href="html.html" >HTML5 Color</a><br><br>
+<div style=" text-align:center" >Made with <i class="fa fa-heart" style="color:red" ></i> By Prateek.<br><br>© Magic PC 2018-50</div>
+<input type="text" readonly="readonly"  class="inp" id="tyy" value="#000000"   >
+</div>
+<div id="toast" >Coppied to Clipboard: <span id="codes" >Code</span></div>
+
+<style type="text/css">
+.code{
+font-weight:bold;
+color:#e67878;
+padding:8px;
+}
+.nam{
+width:100%;
+height:70%;
+border-radius:5px  5px 0 0;
+}
+.back{
+background:#ddd;
+width:150px;
+height:200px;
+margin:10px;
+border-radius:5px;
+}
+.back:nth-child(1) {
+margin-top:10px;
+}
+.back:nth-child(odd) {
+margin-left:15px;
+}
+.back:nth-child(2) {
+margin-top:10px;
+}
+.codehtm{
+background:#ddd;
+padding:15px;
+border-left:5px solid red;
+}
+*{
+outline:none;
+}
+.select{
+text-align:center;
+color:#d456ce;
+font-size:20px;
+}
+input[type="color"]{
+border:0;
+background:transparent;
+height:50px;
+width:80px;
+}
+#toast{
+color:black;
+text-align:center;
+line-height:50px;
+width:100%;
+height:50px;
+position:fixed;
+animation:toast .2s;
+display:none;
+bottom:0px;
+}
+@keyframes toast{
+from{
+bottom:-5px;
+}
+to{
+bottom:0px;
+}
+}
+.pro{
+background:yellow;
+color:black;
+
+}
+.inp{
+height:1px;
+opacity:0;
+border:0;
+width:1px;
+color:#e67878;
+}
+.inp::selection{
+background:transparent;
+color:#e67878;
+}
+</style>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var elements = document.querySelectorAll('.enable-ripple');
+
+Array.prototype.forEach.call(elements, function(button){
+	button.addEventListener('click', ripple);
+});
+
+function ripple(event) {
+	var el = event.currentTarget;
+
+	var rippleEl = document.querySelector('span.ripple');
+	if(!rippleEl) {
+		rippleEl = document.createElement('span');
+	}
+	el.appendChild(rippleEl);
+
+	var max = Math.max(el.offsetWidth, el.offsetHeight);
+	rippleEl.style.width = rippleEl.style.height = max + 'px';
+
+	var rect = el.getBoundingClientRect();
+	rippleEl.style.left = event.clientX - rect.left - (max/2) + 'px';
+	rippleEl.style.top = event.clientY - rect.top - (max/2) + 'px';
+
+	rippleEl.classList.add('ripple');
+};
+</script>
+</body></html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color-Picker</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Audiowide|Faster+One|Libre+Barcode+128+Text|Orbitron|Press+Start+2P" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/sdcard/Download/w3color.js" type="text/javascript"></script>
+<link rel="stylesheet" href="Download/w3.css">
+</head>
+<body>
+<style type="text/css">
+.slider {
+    -webkit-appearance: none;
+    width: 95%;
+    height: 5px;
+    border-radius: 5px;   
+    background: #777;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    transition:.5s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: red;
+    cursor: pointer;
+}
+.slider:hover.slider::-webkit-slider-thumb{
+width: 25px;
+height: 25px;
+}
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+}
+.bk::-moz-range-thumb{
+background:blue;
+}
+.gk::-moz-range-thumb{
+background:green;
+}
+.gk::-webkit-slider-thumb {
+    background:green;
+}
+.bk::-webkit-slider-thumb {
+    background:blue;
+}
+.n{
+text-align:center;
+color:white;
+font-size:20px;
+line-height:55px;
+margin:auto;
+width:95%;
+border-radius:5px;
+height:55px;
+font-family: 'Audiowide', cursive;
+cursor: pointer;
+box-shadow: 6px 6px 25px 3px rgba(0, 0, 0, 0.1);
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+margin-top:4px;
+}
+.n:hover{
+opacity:0.9;
+}
+.ripple {
+	display: block;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	transform: scale(0);
+
+	animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+	to {
+		opacity: 0;
+		transform: scale(2.5);
+	}
+}
+.co{
+color:#e67878;
+font-weight:bold;
+font-size:20px;
+background:rgb(220,220,220);
+height:250px;
+border-radius:8px;
+padding:5px;
+margin-top:4px;
+}
+#bar1 ,#bar2 , #bar3 {
+width: 50px;
+height: 5px;
+background-color: #ff7878;
+margin: 6px 0;
+transition: 0.6s;
+}
+#bar2{
+transition: .6s;
+width:40px;
+}
+#container{
+transition:0.6s;
+position:absolute;
+top:15px;
+}
+
+.bbs{
+margin-left:160px;
+margin-top:290px;
+width:100px;
+height:50px;
+}
+.close{
+position:absolute;
+bottom:5px;
+margin-left:160px;
+}
+
+
+.sidenav {
+height: 0%;
+width: 100%;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background:rgba(0,0,0,.9);
+overflow-x: hidden;
+transition: 0.6s;
+}
+.nav{
+height:380px;
+}
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #fff;
+display: block;
+transition: 0.3s;
+}
+.sidenav a:hover, a:focus{
+color: #f1f1f1;
+}     
+   .change #bar1 {
+   transform: rotate(-405deg)
+   translate(-9px, 6px) ;
+   background:#ff7878;
+   }
+   .change #bar2 {opacity: 0; background:#899;}
+   .change #bar3 {
+   transform: rotate(405deg)
+   translate(-8px, -8px) ;
+   background:#ff7878;
+   }
+   .foot{
+background:#333;
+color:white;
+height:340px;
+font-family: 'Audiowide', cursive;
+   }
+   a{
+   text-decoration:none;
+   }
+#navi{color:#fff;font-family: 'Audiowide', cursive;font-size:40px;line-height:70px;text-align:center;width:100%; height:70px;background:#6cb060;position:absolute;top:0;}
+</style>
+<script type="text/javascript">
+//////////M/A/D/E///B/Y/////P/R/A/T/E/E/K////C/H/A/U/B/E/Y////A/T///P/K/C/Inc./////////////////////////////////////////
+function changeRed(value) {
+  document.getElementById('valRed').innerHTML = value;
+  changeAll();
+}
+function changeGreen(value) {
+  document.getElementById('valGreen').innerHTML = value;
+  changeAll();
+}
+function changeBlue(value) {
+  document.getElementById('valBlue').innerHTML = value;
+  changeAll();
+}
+function changeAll() {
+  var r = document.getElementById('valRed').innerHTML;
+  var g = document.getElementById('valGreen').innerHTML;
+  var b = document.getElementById('valBlue').innerHTML;
+  document.getElementById('change').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+   document.getElementById('myInputtxt').value = "rgb(" + r + ", " + g + ", " + b + ")";
+  document.getElementById('myInputhex').value = w3color("rgb(" + r + "," + g + "," + b + ")").toHexString();
+}
+
+/////R/I/P/P/L/E////
+function myFunction(x) {
+document.getElementById("mySidenav").classList.toggle("nav");
+
+}
+function myfunction(x) {
+document.getElementById("mySidenav").classList.toggle("nav");
+
+}
+
+
+function myaFunction() {
+  var copyText = document.getElementById("myInputtxt");
+  copyText.select();
+  document.execCommand("copy");
+  document.getElementById("codes").textContent=document.getElementById("myInputtxt").value;
+  document.getElementById("toast").style.display="block";
+      document.getElementById("toast").style.background=document.getElementById("myInputhex").value;
+  setInterval(function(){
+  document.getElementById("toast").style.display="none";
+  },5000);
+}
+function myyFunction() {
+  var copyText = document.getElementById("myInputhex");
+  copyText.select();
+  document.execCommand("copy");
+  document.getElementById("codes").innerHTML=document.getElementById("myInputhex").value;
+    document.getElementById("toast").style.background=document.getElementById("myInputhex").value;
+  document.getElementById("toast").style.display="block";
+  setInterval(function(){
+  document.getElementById("toast").style.display="none";
+  },5000);
+
+}
+</script>
+<div id="mySidenav" class="sidenav enable-ripple">
+<a href="socil.html" >Social Color</a><br><br>
+<a href="html.html" >HTML5 Color</a><br><br></a>
+<div style="text-align:center;color:white;" >Tap The color Code to Copy.</div>
+
+<div class="change close" onclick="myfunction(this)">
+<div id="bar1"></div>
+<div id="bar2"></div>
+<div id="bar3"></div>
+</div>
+</div>
+<div id="navi" class="enable-ripple"  >
+<div id="container" onclick="myFunction(this)">
+<div id="bar1"></div>
+<div id="bar2"></div>
+<div id="bar3"></div>
+</div>
+&nbsp; Color Picker</div><br><br><br>
+
+   <div class="co " >
+   <div id="change" class="enable-ripple"  style="height: 180px;position:sticky;top:0px; background-color: rgb(120, 120, 120);border-radius:9px"></div> 
+   &nbsp;&nbsp;&nbsp; <span style="font-size:15px;color:#78c778" >RGB VALUE</span>
+      &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <span align="right"  style="font-size:15px;color:#78c778" >HEX VALUE</span> 
+   &nbsp;&nbsp;&nbsp; <input type="text" readonly="readonly"  class="inp"  id="myInputtxt" value="rgb(120,120,120)"  onclick="myaFunction()">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" style="width:80px"  class="inp" readonly="readonly"  id="myInputhex" value="#787878"  onclick="myyFunction()">
+   
+   </div> 
+   <br> 
+   
+   </div> 
+<div class="n enable-ripple" id="valRed"  style="background:red"  >120</div>
+&nbsp;&nbsp;&nbsp;<input class="slider enable-ripple" value="120"   oninput="changeRed(this.value)" onchange="changeRed(this.value)" type="range" id="slideRed" name="slideRed" min="0" max="255"> <br>
+<div class="n enable-ripple" id="valGreen"  style="background:green">120</div>
+&nbsp;&nbsp;&nbsp;<input class="slider enable-ripple gk"   value="120"  oninput="changeGreen(this.value)" onchange="changeGreen(this.value)" type="range" id="slideGreen" name="slideGreen" min="0" max="255"><br>
+<div class="n enable-ripple" id="valBlue"  style="background:blue" >120</div>
+&nbsp;&nbsp;&nbsp;<input class="slider enable-ripple bk" value="120"   oninput="changeBlue(this.value)" onchange="changeBlue(this.value)" type="range" id="slideBlue" name="slideBlue" min="0" max="255"> 
+<br><br>
+<div class="foot" ><br>
+<a href="gradient.html" >Custom Gradient &nbsp;<sup class="pro" >pro</sup></a><br><br>
+<a href="extract.html" >Extract Color &nbsp;<sup class="pro" >pro</sup></a><br><br>
+<a href="material.html" >Material UI Color</a><br><br>
+<a href="socil.html" >Social Color</a><br><br>
+<a href="html.html" >HTML5 Color</a><br><br>
+<div style=" text-align:center" >Made with <i class="fa fa-heart" style="color:red" ></i> By Prateek.<br><br>© Magic PC 2018-50</div></div>
+<div id="toast" >Coppied to Clipboard: <span id="codes" >Hello</span></div>
+
+</body>
+</html>
+<style type="text/css">
+#toast{
+color:black;
+text-align:center;
+line-height:50px;
+width:100%;
+height:50px;
+position:fixed;
+animation:toast .2s;
+display:none;
+bottom:0px;
+}
+@keyframes toast{
+from{
+bottom:-5px;
+}
+to{
+bottom:0px;
+}
+}
+.pro{
+background:yellow;
+color:black;
+
+}
+.inp{
+font-size:20px;
+height:30px;
+background:transparent;
+border:0;
+width:180px;
+color:#e67878;
+}
+.inp::selection{
+background:transparent;
+color:#e67878;
+}
+</style>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var elements = document.querySelectorAll('.enable-ripple');
+
+Array.prototype.forEach.call(elements, function(button){
+	button.addEventListener('click', ripple);
+});
+
+function ripple(event) {
+	var el = event.currentTarget;
+
+	var rippleEl = document.querySelector('span.ripple');
+	if(!rippleEl) {
+		rippleEl = document.createElement('span');
+	}
+	el.appendChild(rippleEl);
+
+	var max = Math.max(el.offsetWidth, el.offsetHeight);
+	rippleEl.style.width = rippleEl.style.height = max + 'px';
+
+	var rect = el.getBoundingClientRect();
+	rippleEl.style.left = event.clientX - rect.left - (max/2) + 'px';
+	rippleEl.style.top = event.clientY - rect.top - (max/2) + 'px';
+
+	rippleEl.classList.add('ripple');
+};
+</script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript" src="Vibrant.js"></script>
+</head>
+<body>
+<input type="file" id="file"  style="opacity:0;" >
+<button onclick="chk()">Click</button>
+<div  onclick="gee()" >bjsksojh</div>
+<script type="text/javascript">
+var canvas=document.getElementById("canvas");
+function chk(){
+document.getElementById("file").click();
+}
+
+document.getElementById("file").addEventListener("change",function(e){
+
+var temp = URL.createObjectURL(e.target.files[0]);
+//var image= new Image();var image=document.getElementById("can");image.src=temp;alert(temp)
+
+});
+
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function absorbEvent_(event) {
+      var e = event || window.event;
+      e.preventDefault && e.preventDefault();
+      e.stopPropagation && e.stopPropagation();
+      e.cancelBubble = true;
+      e.returnValue = false;
+      return false;
+    }
+
+    function preventLongPressMenu(node) {
+      node.ontouchstart = absorbEvent_;
+      node.ontouchmove = absorbEvent_;
+      node.ontouchend = absorbEvent_;
+      node.ontouchcancel = absorbEvent_;
+    }
+
+    function init() {
+      preventLongPressMenu(document.getElementById('theimage'));
+    }
+    
+    
+    
+    
+    image = new Image(200, 200)
+    image.src = event.target.result
+    document.getElementById("image").innerHTML = "<img src='#{event.target.result}' />"
+    
+    // https://jariz.github.io/vibrant.js/
+    vibrant = new Vibrant(image)
+    swatches = vibrant.swatches()
+    
+   // for swatch of swatches
+    if swatches.hasOwnProperty(swatch) and swatches[swatch]
+   for el in document.querySelectorAll ".color#{swatch}"
+   el.style.backgroundColor = swatches[swatch].getHex()
+   
+   parseFile = (theFile) -> progress
+   
+      reader.onload = parseFile(f)
+      data = reader.readAsDataURL(f)
+   
+   handleDragOver = (event) ->
+   
+   
+   event.stopPropagation()
+   event.preventDefault()
+   event.dataTransfer.dropEffect = "copy"
+   
+    dropZone.addEventListener "dragover", handleDragOver, false
+   dropZone.addEventListener "drop", handleFileSelect, false
+  </script>
+</head>
+<body onload="init()">
+  <img id="theimage" src="http://www.google.com/logos/arthurboyd2010-hp.jpg" width="400">
+</body>
+</html>
